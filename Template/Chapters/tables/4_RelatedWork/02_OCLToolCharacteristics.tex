@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\begin{threeparttable}  
+\caption{Main OCL tools characteristics (based on~\cite{Toval2003})}
+\label{tbl:oclToolsCharacteristics}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\multicolumn{1}{c}{Analysis}                                 & Communication                                                       & Features                                                                              & \begin{tabular}[c]{@{}c@{}}Dynamic \\ validation\end{tabular}                     \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Syntatic \\ analysis\end{tabular} & Model-independent                                                   & \begin{tabular}[c]{@{}c@{}}Guided support \\ for constraint \\ development\end{tabular} & \begin{tabular}[c]{@{}c@{}}Invariant \\ validation\end{tabular}                   \\
+\begin{tabular}[c]{@{}l@{}}Type \\ checking\end{tabular}     & \begin{tabular}[c]{@{}c@{}}With connection \\ to model\end{tabular} & \begin{tabular}[c]{@{}c@{}}Code generation \\ from OCL \\ specifications\end{tabular}   & \begin{tabular}[c]{@{}c@{}}Consistent \\ checking \\ of contraints\end{tabular}   \\
+                                                             &                                                                     & \begin{tabular}[c]{@{}c@{}}Insertion of \\ OCL expressions*\end{tabular}                 & \begin{tabular}[c]{@{}c@{}}Pre- and \\ post-conditions \\ validation\end{tabular} \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}
+    \small
+    \item * Includes three possibilities: imported from a UML model, imported from an independent file or manually introduced.
+\end{tablenotes}
+\end{threeparttable} 
+\end{table}

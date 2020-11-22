@@ -1,0 +1,39 @@
+\chaptercover{Conclusions and Future Work}{chap:Conclusion}
+{In this chapter, we present the verdicts of our experiments, including open issues, limitations, as well as future work directions.}
+
+\section{Discussion}
+
+This dissertation was triggered by claims made in the literature stating that OCL is a topic difficult to learn. We collected data systematically during two consecutive school years, with the help of an e-learning platform, on the outcome of the learning process of a collection of SWEBOK topics, from a large set of undergraduate students, through extensive closed questions questionnaires. OCL appeared in the group of challenging topics, but it did not clearly emerge as the most difficult one.
+
+We also performed inferential statistics to identify the cause of students success/failure in learning OCL, based on similar questionnaires to the ones mentioned above, where students had to translate NL clauses to OCL expressions to answer the questions appropriately. The explanatory variables that we explored were: (i) the linguistic complexity of the questions (problem domain) in NL, ranked by different readability formulas, and (ii) the complexity of the OCL clauses, measured by a set of metrics proposed in the literature, required to answer those questions (solution domain). Neither individually, nor in conjunction, were the aforementioned variables able to provide an acceptable explanatory power, as denoted by low R-squared values in the experiments. 
+
+In addition to shedding light on the factors that influence the OCL learning process, we proposed a tool-based learning feature, dubbed "OCL Highlight", reified as a plugin on the USE tool, which highlights how an OCL clause traverses a UML Class Diagram. We validated this feature by combining an action-research observation period on more than six hundred students in lab sessions, with semi-structured interviews whose conclusions were consolidated by a focus group of experts. We were able to compare the success of students between years where the plugin was used, and the years where it wasn't available. A full consensus was reached that the highlighting feature had a positive effect in the OCL learning process, improving the overall grades without a significant increase in the time needed to complete the OCL questionnaires.
+
+\section{Future Work}
+
+With extensive use of the plugin by students in evaluation moments, we were able to corroborate its utility and confirm that it was beneficial when learning OCL. Nonetheless, we would like to extend this validation with more tests using different models with similar complexity. Future tests should also control for the origin of students since they were following three different graduations (``Computer Science", ``Telecommunications and Computer Engineering" and ``Computer Science and Business Management"). Although the course syllabus has remained constant during the observation period, variations in students background might have occurred.
+
+Additionally, some improvements to the plugin can be considered. First of all, it has many internal USE dependencies (as seen in the Package Diagram). In a future implementation, it would be recommended to use a~\gls{facade} pattern to reduce these dependencies and isolate changes resulting from USE itself. And second, we only considered the utility classes presented in our models. Meaning that, if a new model introduced a different one, it wouldn't be acknowledged, and therefore, not highlighted in the Class Diagram. Therefore, a forthcoming iteration should include an automatic mechanism to detect new utility classes.
+
+\begin{comment}
+ We controlled for the origin of students since they were following three different graduations (``Computer Science", ``Telecommunications and Computer Engineering" and ``Computer Science and Business Management") and the school year since, although the course syllabus has remained constant during the observation period, variations in students background might have occurred.
+
+The initial validation of this plugin was beneficial for the detection of bugs, which are planned to be fixed in a future version, along with the inclusion of the most relevant suggestions provided by the experts. Additional experiments are required to corroborate the utility of the plugin, including extensive use by students in evaluation moments. Results of this experiment will indicate if the developed plugin was beneficial, or not, for students to learn OCL. Likewise, we intend to present further evidence on the relative difficulty of learning OCL by collecting and analyzing assessments data from more recent school years. 
+
+%Finally, it is also planned an experimental validation to measure the difference between the physiological effort, using eye-tracking technology (pupils’ fixations and saccades), when developing expressions with and without the plugin. 
+
+- Improvements to the plugin:
+(1) How to consider more utilityClasses? We only considered the ones available in our models (how to check them dynamically?)
+(2) Implement the metrics WNM and NPT
+(3) Tem muitas dependências internas do USE (como se pode ver nos package diagrams). Numa próxima implementação seria recomdavel usar um padrao facade para reduzir as dependencias do plugin ( e para isolar das alteraçoes decorrentes do proprio use)
+(4) More tests with different models and expressions
+
+- feature interessante (1): guardar as queries (numa estrutura de anel, para que desse a volta) que foram introduzidas no painel e executadas com sucesso (não interessa guardar lixo intermédio), permitindo que fossem repetidas e feitas variantes
+- feature interessante (2): tal como o coverage, ter um botão que mostrasse a coverage de várias queries ao mesmo tempo (para ter uma ideia de quais zonas do modelo já explorei)
+\end{comment}
+
+\begin{comment}
+Pergunta de discussão:
+- o que fazia diferente
+- clarificar o trabalho futuro
+\end{comment}

@@ -1,0 +1,105 @@
+%Author: Miguel Duarte (http://miguelduarte.pt), updated by Fernando Brito e Abreu
+%IEEE ISCTE-IUL Student Branch (http://ieee-iscteiul.org)
+
+\documentclass[a4paper, 12pt, oneside]{thesis} %twoside
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese, english]{babel}
+\usepackage{pdfpages}
+\usepackage{time}
+\usepackage{appendix}
+\usepackage{sidecap}
+\usepackage[super]{nth}
+ 
+\usepackage{lipsum}  
+\usepackage{makecell}
+\usepackage{threeparttable}
+\usepackage{url}
+\usepackage{amsmath, amssymb, amsthm}
+
+\usepackage{tabularx,booktabs,ragged2e}
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+  
+\include{styles}
+
+\begin{document}
+\newtheorem{mydef1}{Definition}
+\selectlanguage{english}
+
+\include{cover}
+%\include{quote}
+
+%-------RESUMO---------
+%mesmo se escreverem a tese em inglês, tem que haver um resumo/abstract em português
+%MPSS\include{content/1_Abstract}
+
+%-------ABSTRACT---------
+%MPSS\include{content/1_Abstract_ENG}
+
+
+\setstretch{1.3}
+
+%-------AGRADECIMENTOS---------
+%MPSSS\include{content/2_Acknowledgements}
+
+\pagestyle{fancy}
+%-------IDIOMA DA TESE---------
+%Descarreguem a versão que disponibilizamos deste template em PT
+%se quiserem fazer a tese em PT: http://ieee-iscteiul.org
+\selectlanguage{english}
+%\selectlanguage{portuguese}
+
+%-------ÍNDICE---------
+\include{toc}
+
+%-------Glossário---------
+
+%\include{glossary}
+
+%
+% Adiciona o estilo do capítulo
+\titleformat{\chapter}[hang]{\Huge\bfseries\scshape}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+%-------CAPÍTULOS---------
+\mainmatter	  % Numeração normal (1,2,3...)
+
+%chapter 1
+\include{content/3_Introduction}
+
+%chapter 2
+\include{content/4_RelatedWork}
+
+%chapter 3
+\include{content/5_Implementation}
+
+%chapter 4
+\include{content/6_Results}
+
+%chapter 5
+\include{content/7_Conclusion}
+
+\addtocontents{toc}{\vspace{2em}}
+
+
+%-------BIBLIOGRAFIA---------
+%Adicionem as referências em BibTeX ao ficheiro references.bib
+\label{References}
+\lhead{\emph{References}}  
+\bibliographystyle{acm}
+%\bibliographystyle{plainurl}
+\bibliography{references}
+%\printbibliography
+\end{document}
+
+%-------ANEXOS---------
+
+\appendix
+\appendixpage
+\addappheadtotoc
+
+\chapter{Anexo}
+\addtocontents{toc}{\vspace{2em}}
+\backmatter
+%\fancyfoot[LE,RO]{\thepage}

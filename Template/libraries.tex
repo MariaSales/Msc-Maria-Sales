@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Part - When document is split into parts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is the code to include document PARTs
+%% and in the back of the PART page includes an graphic about the document 
+%% structure
+\makeatletter
+\renewcommand\part{%
+   \if@openright
+     \cleardoublepage
+   \else
+     \clearpage
+   \fi
+   \thispagestyle{empty}%
+   \if@twocolumn
+     \onecolumn
+     \@tempswatrue
+   \else
+     \@tempswafalse
+   \fi
+   \null\vfil
+   \secdef\@part\@spart}
+\makeatother
+
+\newcommand{\partcover}[3]{ 
+\nopartblankpage
+\part{#1}
+
+\thispagestyle{plain}
+\begin{center}
+   \includegraphics[width=14cm]{Chapters/figures/#2}
+\end{center}
+%\cleardoublepage % or \clearpage Text on the following blank page \clearpage
+%\clearpage
+\vfill
+\par\noindent\rule{\textwidth}{0.4pt}
+#3
+\par\noindent\rule{\textwidth}{0.4pt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom/New chapter start
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\chaptercover}[3]{ 
+\chapter{#1}
+\label{#2}
+\minitoc
+
+\vfill
+\par\noindent\rule{\textwidth}{0.4pt}
+#3
+\par\noindent\rule{\textwidth}{0.4pt}
+\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Quote at the beginning of each chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\chapterquote}[3]{ 
+\begin{flushright}
+\rightskip=0.8cm\textit{``#1''} \\
+\vspace{.2em}
+\rightskip=.8cm---#2\footnote{#3}
+\end{flushright}
+\vspace{1em}
+}
+
+\newcommand{\chapterquotes}[4]{ 
+\begin{flushright}
+\rightskip=0.8cm\textit{``#1''\footnote{#2}}\\
+\vspace{.2em}
+\rightskip=.8cm---#3\footnote{#4}
+\end{flushright}
+\vspace{1em}
+}
+
+
+\newcommand{\musicquote}[2]{ 
+%\footnotesize \\Companion Soundtrack: \href[pdfnewwindow=true]{#1}{#2}
+%\normalsize
+}
+
+
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle;}%
+
+\newcommand{\piezero}[1]{%
+  \begin{tikzpicture}
+    \draw (0,0) circle (1ex); \fill[white] (1ex,0) arc (0:#1:1ex) -- (0,0) -- cycle;
+  \end{tikzpicture}%
+}
+
+\newcommand{\pie}[1]{%
+  \begin{tikzpicture}
+    \draw (0,0) circle (1ex); \fill[black!90] (1ex,0) arc (0:#1:1ex) -- (0,0) -- cycle;
+  \end{tikzpicture}%
+}
+
+\newcommand{\pietwo}[1]{%
+\begin{tikzpicture}[rotate=270]
+ \draw (0,0) circle (1ex); \fill[black!90] (1ex,0) arc (0:#1:1ex) -- (0,0) -- cycle;
+\end{tikzpicture}%
+}
+
+\newcommand{\piethree}[1]{%
+\begin{tikzpicture}[rotate=180]
+ \draw (0,0) circle (1ex); \fill[black!90] (1ex,0) arc (0:#1:1ex) -- (0,0) -- cycle;
+\end{tikzpicture}%
+}
+
+
+\newcommand{\zeropct}{\piezero{0}}
+
+\newcommand{\quarterpct}{\pie{90}}
+
+\newcommand{\halfpct}{\pietwo{180}}
+
+\newcommand{\threequarterpct}{\piethree{270}}
+
+\newcommand{\fullpct}{\pie{360}}
+
+
+\newcommand{\classboard}[6]{
+
+\begin{table}[h]
+	\caption{#1}
+	%\label{#2}
+\centering
+\begin{tabular}{lp{0.3cm}p{8cm}}
+    %\caption{#1}
+	%\label{#2}
+	\hline\noalign{\smallskip}
+     &  & \textbf{Description}
+	\\\noalign{\smallskip}\hline\noalign{\smallskip}
+	 \textbf{The benefit is:} &  & \\[0.2cm]
+	 \textbf{Absent (0)} & \zeropct & #2\\[0.2cm]
+     \textbf{Weak (0.25)} & \quarterpct & #3\\[0.2cm]
+     \textbf{Moderate (0.5)} & \halfpct & #4\\[0.2cm]
+     \textbf{Strong (0.75)} & \threequarterpct & #5\\[0.2cm]
+     \textbf{Complete (1)} & \fullpct & #6\\
+	 \noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
+
+}
+
+\newcommand{\noteboard}[2]{
+\vspace{0.5cm}
+\begin{tcolorbox}[width=\textwidth,colback={white},title={\textbf{#1}},colbacktitle=gray!10,coltitle=black, boxrule=0.5pt, leftrule=3pt, sharp corners=all]  % auto outer -> makes rounded corners
+    #2
+\end{tcolorbox}
+\vspace{1cm}
+}
+
+
+\definecolor{iscte-iul-palette}{HTML}{14BFB8} % ISCTE - ISTA Color, change it to your desired color. DON'T CHANGE THE VARIABLE NAME.
+
+
+
+\newcommand{\hypnull}{
+\textbf{H\textsubscript{0}}\xspace
+}
+
+\newcommand{\hypalt}{
+\textbf{H\textsubscript{1}}\xspace
+}
+
+
+

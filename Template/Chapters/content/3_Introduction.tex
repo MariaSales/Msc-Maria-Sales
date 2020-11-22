@@ -1,0 +1,46 @@
+\newcommand{\novathesis}{\emph{novathesis}}
+\newcommand{\novathesisclass}{\texttt{novathesis.cls}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is the code to include document PARTs
+%% and in the back of the PART page includes an graphic about the document 
+%% structure
+%\partcover{Fundamentals}{part1.pdf}
+%{This Part covers the motivation, scope, research problems and main contributions of this work and highlights the fundamental topics, such as: Software Development Process, Software Analytics and Process Mining. It also presents a Systematic Literature Review about Software Development Analytics in Practice.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chaptercover{Introduction}{chap:Introduction}
+{This chapter describes the motivation and scope of this dissertation and presents the contributions and the organization of the document.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\chapterquotes{...All things -from the tiniest virus to the greatest galaxy- are, in reality, not things at all, but processes...}{In \textit{"Future Shock"}, 1970.}{Alvin Toffler(1928-2016)}{American writer, futurist, and businessman known for his works discussing modern technologies, including the digital and the communication revolutions, with emphasis on their effects on cultures worldwide.}
+
+UML~\cite{uml2005} was created by the~\gls{omg}~\cite{omg2017} and had its first specification draft proposed in January 1997. It's currently the standard language used in software development for specifying, visualizing, assembling, and documenting artefacts of software systems. However, UML graphical modelling constructs are not precise enough to express all relevant aspects of a specification. In order to mitigate this problem, a semi-formal language named OCL~\cite{ocl2014} was included in the UML standard and has been employed in a beneficial way to provide precision to models~\cite{Gogolla2004}. OCL is based on first-order logic (\emph{predicate calculus}) and set theory, provides many collection operations and can be used in several contexts, such as expressing constraints (class invariants, pre-and post-conditions, ...) and derivation rules for attributes or associations in a Class Diagram, specifying well-formedness rules and metrics at the~\gls{metamodel} level, querying objects in an~\gls{objectDiagram} (equivalent to~\gls{sql} queries in relational databases), and specifying guards on state transitions in a~\gls{stateDiagram}.
+
+\gls{formalMethods} is a long-discussed topic in Software Engineering, and several studies have been conducted to assess the benefits of using OCL alongside UML models~\cite{Briand2004}~\cite{Briand2005}. Albeit there are still disputes about under what circumstances formal methods and languages should be used, there appears to be a consensus that OCL is advantageous to modellers once they overcome the initial learning curve, which has been proven as a difficult task~\cite{Zamansky2016}.
+
+\section{Motivation and research problem}
+\label{sec:Introduction-Motivation}
+
+Several support tools were developed to assist in MDD, including the analysis and design phases where modellers need to interpret and write OCL expressions. These tools have their specific characteristics and provide a variety of useful functionalities, including syntactic analysis, connection with the UML model, and debugging~\cite{Toval2003}. To the best of our knowledge, none of these tools provides syntax highlighting in a Class Diagram for manually introduced OCL expressions, which we believe that could soften the learning curve for this language by reducing the mental burden when reading, analyzing and writing expressions. Our hypothesis is based on the multiple studies available that investigate the impact of visual aspects (colour, layout, font, ...) on program comprehension, and they all reveal positive outcomes on subject's comprehensibility when enhancing programs with visual features~\cite{Rambally1986}~\cite{Yusuf2007}~\cite{Mehta2009}~\cite{Sarkar2015}.
+
+\section{Objectives}
+\label{sec:Introduction-Objectives}
+
+As a first objective, we aim to shed some light on which factors influence OCL's learning process. To achieve this, we study the results of OCL-related questionnaires taken by bachelor students across different school years, and how distinctive variables affect their results, including the complexity of the questions (given by readability indices), and the complexity of the answers (given by OCL complexity metrics). 
+
+As the second objective, we seek a solution to soften OCL's learning curve by reducing the cognitive effort needed to correctly produce a clause from a specification in~\gls{nl}, in the context of a UML Class Diagram. To accomplish this goal, we propose the OCL Highlight Plugin (presented in the next section).
+
+\section{Contributions}
+
+\label{sec:Introduction-Contributions}
+
+The contributions of this dissertation are the design, implementation, prototype and experimental validation of two plugins for the~\gls{use} tool. The first plugin, named OCL Highlight Plugin, provides syntax highlighting for manually introduced OCL expressions in the context of a UML class diagram. This plugin analyzes the syntax tree of an OCL expression and highlights the diagram components that are referred in that specific expression, including classes, properties, and navigations. The second plugin, named OCL Complexity Plugin, analyzes the same syntax tree and evaluates the complexity of OCL expressions using a set of metrics defined by Reynoso et al.~\cite{Reynoso2005, Reynoso2010}. The idea of including the calculation of these metrics in a plugin resulted from the studies performed to fulfil the first objective of this dissertation.
+
+\section{Dissertation organization}
+\label{sec:Introduction-Organization}
+
+This dissertation is structured in 5 chapters, where the first is the introduction. The remainder of this document is organized as follows. Chapter~\ref{chap:RelatedWork} presents the topic's background and related work, consisting of relevant research contributions. Chapter~\ref{chap:Implementation} describes the implemented prototypes, from a broader perspective to a more detailed one. Chapter~\ref{chap:Results} discusses the conducted experiments and relevant results. Chapter~\ref{chap:Conclusion} contains the concluding remarks and addresses open issues and future research work directions.
+
+%Chapter~\ref{chap:Implementation} describes our implementation of the plugin, from a broader perspective into a more detailed one. Chapter~\ref{chap:Results} discusses the conducted experiment with our solution and relevant results. Chapter~\ref{chap:Conclusion} contains the concluding remarks, also addressing some open
+%issues and future research work directions.

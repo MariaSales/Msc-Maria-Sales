@@ -1,0 +1,46 @@
+The impact of OCL in UML-based development has been discussed on many investigations over the past years, focusing on OCL's influence on comprehension and maintainability of UML models. This chapter presents the results of the main studies on this topic, including experiments using eye-tracking technology to assess how modelers comprehend UML and OCL. Finally, we present USE: UML-based Specification Environment, which was the chosen tool to be focused on this investigation for assessing the impact of syntax highlight on OCL comprehension.
+
+
+
+
+
+\begin{comment}
+Besides aiming at shedding some light on the factors that influence the OCL learning process, we propose a tool-based learning feature, dubbed "model highlighting", reified as a plugin to Bremen's USE tool. This plugin highlights how an OCL clause traverses a UML class diagram. We performed a preliminary validation of this model highlighting feature by combining an action-research observation period on more than two hundred students in lab sessions in the current school year, with semi-structured interviews, whose conclusions were consolidated by a focus group. The panel of experts unanimously recognized that this model highlighting feature had a positive effect in the OCL learning process.
+\end{comment}
+
+\begin{comment}
+ To achieve this, we propose a plugin developed in Java for an existing OCL tool named USE (UML-based Specification Environment)~\cite{use}.
+ 
+The primary objective of this dissertation is to reduce cognitive and physiological effort, measured by the number of saccades and fixations captured by an eye-tracking device, needed to correctly interpret an OCL expression. Additionally, we aim to reduce the time needed to develop an OCL query, based on requirements documented in natural language, in the context of a UML diagram. In order to achieve these objectives, we developed a plugin in Java for an existing OCL tool named USE (UML-based Specification Environment)~\cite{use}.
+\end{comment}
+
+
+
+For the OCL Complexity Plugin, a similar implementation was proposed, but instead of providing highlight, different OCL complexity metrics are displayed to the user.
+
+
+
+
+\begin{comment}
+/**
+	 * Weighted Number of Messages: The number of messages defined in an expression
+	 * weighted by its actual parameters. The weighted operation is carried out
+	 * according to: ∑ ( 1 + | Par(m) | ) m ∈ M(expression), where: ● M(expression):
+	 * Set of different operations2 used through messaging in an expression. ●
+	 * |Par(m)|: quantity of actual parameter of the m operation.
+	 */
+	int getWNM();
+
+	void setWNM(int wnm);
+
+	/**
+	 * Number of Parameters whose Types are classes defined in the class diagram:
+	 * This metric is specially used in pre- and post-condition expressions, and it
+	 * counts the method parameters, and the return type (also called result) used
+	 * in an expression, having each parameter/result a type representing a class or
+	 * interface defined in the class diagram.
+	 */
+	int getNPT();
+
+	void setNPT(int npt);
+\end{comment}
